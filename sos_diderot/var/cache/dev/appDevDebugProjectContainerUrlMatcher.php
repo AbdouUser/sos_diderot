@@ -184,19 +184,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_stuff_index']), array (  'page' => 1,  '_controller' => 'AppBundle\\Controller\\StaffController::index',));
             }
 
-            // login
-            if ('/staff/login' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\StaffController::SOSLogin',  '_route' => 'login',);
-            }
-
             // oc_staff_view
             if (0 === strpos($pathinfo, '/staff/view') && preg_match('#^/staff/view/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_staff_view']), array (  '_controller' => 'AppBundle\\Controller\\StaffController::view',));
-            }
-
-            // staff.add
-            if ('/staff/add' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\StaffController::add',  '_route' => 'staff.add',);
             }
 
             // oc_staff_edit
@@ -209,32 +199,47 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_staff_delete']), array (  '_controller' => 'AppBundle\\Controller\\StaffController::delete',));
             }
 
+            // add
+            if ('/staff/add' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StaffController::add',  '_route' => 'add',);
+            }
+
         }
 
-        elseif (0 === strpos($pathinfo, '/Student')) {
+        elseif (0 === strpos($pathinfo, '/student')) {
             // oc_Student_index
-            if (preg_match('#^/Student(?:/(?P<page>\\d+))?$#sD', $pathinfo, $matches)) {
+            if (preg_match('#^/student(?:/(?P<page>\\d+))?$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_Student_index']), array (  'page' => 1,  '_controller' => 'AppBundle\\Controller\\StudentController::index',));
             }
 
             // oc_Student_view
-            if (0 === strpos($pathinfo, '/Student/view') && preg_match('#^/Student/view/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/student/view') && preg_match('#^/student/view/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_Student_view']), array (  '_controller' => 'AppBundle\\Controller\\StudentController::view',));
             }
 
             // oc_Student_add
-            if ('/Student/add' === $pathinfo) {
+            if ('/student/add' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\StudentController::add',  '_route' => 'oc_Student_add',);
             }
 
             // oc_Student_edit
-            if (0 === strpos($pathinfo, '/Student/edit') && preg_match('#^/Student/edit/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/student/edit') && preg_match('#^/student/edit/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_Student_edit']), array (  '_controller' => 'AppBundle\\Controller\\StudentController::edit',));
             }
 
             // oc_Student_delete
-            if (0 === strpos($pathinfo, '/Student/delete') && preg_match('#^/Student/delete/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/student/delete') && preg_match('#^/student/delete/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_Student_delete']), array (  '_controller' => 'AppBundle\\Controller\\StudentController::delete',));
+            }
+
+            // login
+            if ('/student/login' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSLogin',  '_route' => 'login',);
+            }
+
+            // inscription
+            if ('/student/inscription' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSInscription',  '_route' => 'inscription',);
             }
 
         }

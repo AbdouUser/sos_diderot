@@ -6,9 +6,16 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
+use AppBundle\Entity\student;
 
 /**
- * @Route("/Student")
+ * @Route("/student")
  */
 class StudentController extends AbstractController
 {
@@ -92,5 +99,62 @@ class StudentController extends AbstractController
 
     return $this->render('Student/delete.html.twig');
   }
-}
 
+  /**
+     * @Route("/login", name="login")
+     */
+    public function SOSLogin(Request $request, AuthenticationUtils $authenticationUtils)
+    {
+        $errors= $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+        // replace this example code with whatever you need
+        return $this->render('SOSDiderot/connexion.html.twig',array(
+          'errors'=>$errors,
+          'last_username'=>$lastUsername,
+        ));
+    }
+
+
+    /**
+     * @Route("/inscription", name="inscription")
+     */
+    public function SOSInscription(Request $request,\Swift_Mailer $mailer, UserPasswordEncoderInterface $encoder)
+    {
+		  $user = new student();
+      if ($request->isMethod('post')){
+
+    		$data=$request->request->all();
+    		$user->setName($data['nom']);
+        $user->setFirstName($data['prenom']);
+        $user->setEmail($data['email']);
+        $user->setIne($data['ine']);
+        $encoded = $encoder->encodePassword($user, $data['password']);
+        $user->setPassword($encoded);
+        $user->setFormation("non renseigné");
+        $user->setUniversity("non renseigné");
+
+        $em= $this->getDoctrine()->getManager();
+
+        $em->persist($user);
+        $em->flush();
+
+
+        $message = (new \Swift_Message('Hello Email'))
+        ->setFrom('send@example.com')
+        ->setTo($data['email']);
+         $mailer->send($message);
+
+
+        $this->addFlash(
+        		'success',
+        		'Votre inscription à été pris en compte'
+        	);
+        return $this->redirectToRoute('login');
+
+  		}
+
+        return $this->render('SOSDiderot/inscription.html.twig');
+    }
+}

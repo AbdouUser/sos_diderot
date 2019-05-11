@@ -4,42 +4,19 @@
         <div class="row">
         <div class="col-lg-4 col-xs-4 col-md-4 col-xl-4  mt-3" ></div>
    			 <div id="formulaire" class="col-lg-4 col-xs-4 col-md-4 mt-3 col-xl-4 bg-light">
-                        <form action="/staff/add" method="post" class="ui form" onsubmit="return validateForm();">
+                        <form action="/student/inscription" method="post" class="ui form" onsubmit="return validateForm();">
                             <div class="form-style-5">
                                 <fieldset>
                                     <legend><img src="{{ asset('img/diplome.png') }}"/>S'inscrire</legend>
-                                    <input id="nom" title="" type="text" name="name" placeholder="Votre nom *" " onblur="verifnom()"
+                                    <input id="nom" title="" type="text" name="nom" placeholder="Votre nom *" " onblur="verifnom()"
                                     required>
-                                    <input id="prenom" title=""type="text" name="firstName" placeholder="Votre prénom *" "
+                                    <input id="prenom" title=""type="text" name="prenom" placeholder="Votre prénom *" "
                                     onblur="verifprenom()" required>
                                     <input id="email"type="email" name="email" placeholder="Votre e-email *" onblur="verifMail()"required>
                                     <input id="mdp" title=""type="password" name="password" placeholder="Votre mot de passe *" onblur="verifmdp()" required>
-                                    <input id="mdpc" type="password" name="pswd" placeholder="Confirmation mot de passe *"
+                                    <input id="mdpc" type="password" name="pswc" placeholder="Confirmation mot de passe *"
                                            onblur="verifmdpMatch()" required>
-				    <select data-trigger="" name="ufr">
-                <option placeholder="" value="inf">Informatique</option>
-                <option value="phy">Physique</option>
-                <option value="sci">Science et nature</option>
-                <option  value="his">Histoire</option>
-                <option  value="chi">Chimie</option>
-              </select>	</br></br>
-				     <select data-trigger="" name="service">
-                <option  value="soci" placeholder="">Social</option>
-                <option value="sch">Scolarité</option>
-                <option value="bri" >Relations Internationnales</option>
-                <option value="spr">Service des sports</option>
-                <option value="sente">Médecine de prévention</option>
-              </select>	</br></br>
-                                    <select data-trigger="" name="job">
-                <option value="secr" placeholder="">secretaire</option>
-                <option value="prof">Professeur</option>
-                <option value="resp">responsable pédagogique</option>
-              </select>
-                                 </br></br>
-        
-                                    <input type="radio" name="statut" value="Etudiant" required>Etudiant
-                                    <input type="radio" name="statut" value="Professionel">Professionel
-                                    <br>
+                                   <input id="ine" title="" type="text" name="ine" placeholder="Numèro INE *" onblur="verifINE()" required>
                                     <input id="submit" type="submit" value="INSCRIPTION"/>
                                 </fieldset>
                             </div>

@@ -4,7 +4,7 @@
 namespace AppBundle\Controller;
 
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -13,7 +13,6 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
-
 use AppBundle\Entity\staff;
 
 
@@ -22,41 +21,27 @@ use AppBundle\Entity\staff;
  */
 class StaffController extends AbstractController
 {
-  
+
 
   /**
    * @Route("/{page}", name="oc_stuff_index", requirements={"page" = "\d+"}, defaults={"page" = 1})
    */
   public function index($page)
   {
-    
+
     if ($page < 1) {
       throw $this->createNotFoundException('Page "'.$page.'" inexistante.');
     }
 
     // Ici, on récupérera la liste des personnes
-    	
+
     $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:staff');
     $staff=$repository->findAll();
     // on fait appeler le template
     return $this->render('staff/staffList.html.twig',$staff);
   }
 
-  /**
-     * @Route("/login", name="login")
-     */
-    public function SOSLogin(Request $request, AuthenticationUtils $authenticationUtils)
-    {
-        $errors= $authenticationUtils->getLastAuthenticationError();
 
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-        // replace this example code with whatever you need
-        return $this->render('SOSDiderot/connexion.html.twig',array(
-          'errors'=>$errors,
-          'last_username'=>$lastUsername,
-        ));
-    }
 
 
   /**
@@ -66,7 +51,7 @@ class StaffController extends AbstractController
   {
     $errors= $authenticationUtils->getLastAuthenticationError();
 
-   
+
     // Ici, on récupérera la personne correspondante à l'id $id
     $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:staff');
     $staff=$repository->find($id);
@@ -77,40 +62,6 @@ class StaffController extends AbstractController
     ]);
   }
 
-  /**
-   * @Route("/add", name="staff.add")
-   */
-  public function add(Request $request,\Swift_Mailer $mailer, UserPasswordEncoderInterface $encoder)
-  {      $user = new staff();
-   
-      if ($request->isMethod('post')){
-        $data=$request->request->all();
-    		$user->setName($data['name']);
-        $user->setFirstName($data['firstName']);
-        $user->setEmail($data['email']);
-        $encoded = $encoder->encodePassword($user, $data['pswd']);
-        $user->setPassword($encoded);
-        $user->setUfr($data['ufr']);
-	$user->setService($data['service']);
-        $user->setjob($data['job']);
-
-        $em= $this->getDoctrine()->getManager();
-
-        $em->persist($user);
-        $em->flush();
-
-
-
-        $this->addFlash(
-        		'success',
-        		'Votre inscription à été pris en compte'
-        	);
-        return $this->redirectToRoute('login');
-
-  		}
-
-        return $this->render('SOSDiderot/inscription.html.twig');
-  }
 
   /**
    * @Route("/edit/{id}", name="oc_staff_edit", requirements={"id" = "\d+"})
@@ -140,5 +91,63 @@ class StaffController extends AbstractController
 
     return $this->render('staff/delete.html.twig');
   }
-}
 
+
+  /**
+     * @Route("/login", name="login")
+     */
+    public function SOSLogin(Request $request, AuthenticationUtils $authenticationUtils)
+    {
+        $errors= $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+        // replace this example code with whatever you need
+        return $this->render('SOSDiderot/connexion.html.twig',array(
+          'errors'=>$errors,
+          'last_username'=>$lastUsername,
+        ));
+    }
+
+
+
+  /**
+   * @Route("/add", name="add")
+   */
+  public function add(Request $request,\Swift_Mailer $mailer, UserPasswordEncoderInterface $encoder)
+  {
+    $user = new staff();
+    if ($request->isMethod('post')){
+
+      $data=$request->request->all();
+      $user->setName($data['nom']);
+      $user->setFirstName($data['prenom']);
+      $user->setEmail($data['email']);
+      $encoded = $encoder->encodePassword($user, $data['password']);
+      $user->setPassword($encoded);
+      $user->setUfr($data['ufr']);
+      $user->setService($data['service']);
+      $user->setJob($data['job']);
+      $em= $this->getDoctrine()->getManager();
+
+      $em->persist($user);
+      $em->flush();
+
+
+      $message = (new \Swift_Message('Hello Email'))
+      ->setFrom('send@example.com')
+      ->setTo($data['email']);
+       $mailer->send($message);
+
+
+      $this->addFlash(
+          'success',
+          'Votre inscription à été pris en compte'
+        );
+      return $this->redirectToRoute('login');
+
+    }
+
+      return $this->render('SOSDiderot/inscriptionPro.html.twig');
+  }
+}

@@ -108,6 +108,6 @@ class __TwigTemplate_07e34cf8d8c2708ac983c2cc19c58e08ddc124124eb3df088c5890d7581
             </div>
         {% endfor %}
     {% endfor %}
-{% endblock %}", "flash-messages.html.twig", "/var/www/sos_diderot/app/Resources/views/flash-messages.html.twig");
+{% endblock %}", "flash-messages.html.twig", "/var/www/web2/sos_diderot/sos_diderot/app/Resources/views/flash-messages.html.twig");
     }
 }

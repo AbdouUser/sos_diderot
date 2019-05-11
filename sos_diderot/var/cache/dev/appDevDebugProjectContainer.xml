@@ -558,7 +558,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.afjnrdv"/>
+      <argument type="service" id="service_locator.y4lbt1n"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -2263,14 +2263,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -2680,7 +2672,13 @@
     </service>
     <service id="security.encoder_factory.generic" class="Symfony\Component\Security\Core\Encoder\EncoderFactory" public="false">
       <argument type="collection">
-        <argument key="AppBundle\Entity\User" type="collection">
+        <argument key="AppBundle\Entity\student" type="collection">
+          <argument key="class">Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder</argument>
+          <argument key="arguments" type="collection">
+            <argument>13</argument>
+          </argument>
+        </argument>
+        <argument key="AppBundle\Entity\staff" type="collection">
           <argument key="class">Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder</argument>
           <argument key="arguments" type="collection">
             <argument>13</argument>
@@ -3105,7 +3103,7 @@
     </service>
     <service id="security.user.provider.concrete.db_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider" public="false">
       <argument type="service" id="doctrine"/>
-      <argument>AppBundle:User</argument>
+      <argument>AppBundle:student</argument>
       <argument>email</argument>
       <argument>null</argument>
     </service>
@@ -3291,7 +3289,8 @@
       <tag name="console.command" command="security:encode-password"/>
       <argument type="service" id="security.encoder_factory.generic"/>
       <argument type="collection">
-        <argument>AppBundle\Entity\User</argument>
+        <argument>AppBundle\Entity\student</argument>
+        <argument>AppBundle\Entity\staff</argument>
       </argument>
       <call method="setName">
         <argument>security:encode-password</argument>
@@ -4373,13 +4372,30 @@
         <argument key="mailer" type="service" id="swiftmailer.mailer.default" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id="service_locator.afjnrdv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.qx07crr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticationUtils" type="service" id="security.authentication_utils" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id="service_locator.zblmzho" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="encoder" type="service" id="security.user_password_encoder.generic" on-invalid="ignore"/>
+        <argument key="mailer" type="service" id="swiftmailer.mailer.default" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id="service_locator.y4lbt1n" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Controller\StaffController:SOSLogin" type="service" id="service_locator.9r1qt7y"/>
         <argument key="AppBundle\Controller\StaffController:add" type="service" id="service_locator.vb8prsf"/>
+        <argument key="AppBundle\Controller\StudentController:SOSInscription" type="service" id="service_locator.zblmzho"/>
+        <argument key="AppBundle\Controller\StudentController:SOSLogin" type="service" id="service_locator.qx07crr"/>
         <argument key="AppBundle\Controller\StaffController::SOSLogin" type="service" id="service_locator.9r1qt7y"/>
         <argument key="AppBundle\Controller\StaffController::add" type="service" id="service_locator.vb8prsf"/>
+        <argument key="AppBundle\Controller\StudentController::SOSInscription" type="service" id="service_locator.zblmzho"/>
+        <argument key="AppBundle\Controller\StudentController::SOSLogin" type="service" id="service_locator.qx07crr"/>
       </argument>
     </service>
     <service id="service_locator.8vuqatr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">

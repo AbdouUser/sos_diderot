@@ -60,26 +60,21 @@ class __TwigTemplate_9c1895f5558812e43ce0a78a601ff1f224bef5343a3ace47d09c2e847d4
     <div class=\"col-lg-8 col-xs-8 col-md-8 col-xl-8 mx-auto mt-5\">
       <center>
           <font color =\"white\"><h3>Vous êtes professionnel de l'université de Paris ? <br> Découvrez la prise de rendez-vous en ligne !</h3></font><br>
-          <!-- a href=\"/inscription\"> <input type=\"submit\" value=\"Commencer\" class=\"btn btn-primary mb-2 mx-auto d-block\" href=\"/inscription\" / -->
-          <form method=\"get\" action=\"/staff/add\">
-          <input type=\"submit\" value=\"Commencer\" class=\"btn btn-primary mb-2 mx-auto d-block\">
-          </form>
+          <a href=\"/staff/add\"> <input type=\"submit\" value=\"Commencer\" class=\"btn btn-primary mb-2 mx-auto d-block\"></a>
+
       </center>
    </div>
 
 <!--
    <div class=\"col-lg-4 col-xl-4 col-xs-4 col-md-4 toure\">
       <img src=\"";
-        // line 23
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/toure.png"), "html", null, true);
         echo "\"/>
    </div>
 -->
 </div>
-<script src=\"";
-        // line 27
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/staffList.js"), "html", null, true);
-        echo "\"></script>
+
 
 
 ";
@@ -103,7 +98,7 @@ class __TwigTemplate_9c1895f5558812e43ce0a78a601ff1f224bef5343a3ace47d09c2e847d4
 
     public function getDebugInfo()
     {
-        return array (  81 => 27,  74 => 23,  59 => 10,  57 => 9,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  72 => 21,  59 => 10,  57 => 9,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -129,10 +124,8 @@ class __TwigTemplate_9c1895f5558812e43ce0a78a601ff1f224bef5343a3ace47d09c2e847d4
     <div class=\"col-lg-8 col-xs-8 col-md-8 col-xl-8 mx-auto mt-5\">
       <center>
           <font color =\"white\"><h3>Vous êtes professionnel de l'université de Paris ? <br> Découvrez la prise de rendez-vous en ligne !</h3></font><br>
-          <!-- a href=\"/inscription\"> <input type=\"submit\" value=\"Commencer\" class=\"btn btn-primary mb-2 mx-auto d-block\" href=\"/inscription\" / -->
-          <form method=\"get\" action=\"/staff/add\">
-          <input type=\"submit\" value=\"Commencer\" class=\"btn btn-primary mb-2 mx-auto d-block\">
-          </form>
+          <a href=\"/staff/add\"> <input type=\"submit\" value=\"Commencer\" class=\"btn btn-primary mb-2 mx-auto d-block\"></a>
+
       </center>
    </div>
 
@@ -142,7 +135,7 @@ class __TwigTemplate_9c1895f5558812e43ce0a78a601ff1f224bef5343a3ace47d09c2e847d4
    </div>
 -->
 </div>
-<script src=\"{{asset('js/staffList.js')}}\"></script>
+
 
 
 {% endblock %}

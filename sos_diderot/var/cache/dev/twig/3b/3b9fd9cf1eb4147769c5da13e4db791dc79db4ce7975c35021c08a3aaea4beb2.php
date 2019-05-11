@@ -38,12 +38,12 @@ class __TwigTemplate_409eacec01413e5ecfe0ee81920a3d35e3d154c789954ff9d98cfd46c2a
         <div class=\"collapse navbar-collapse justify-content-end\">
             <ul class=\"navbar-nav\">
                 <li class=\"nav-item\">
-                    <a href=\"/inscription\" class=\"nav-link text-light\">
+                    <a href=\"/student/inscription\" class=\"nav-link text-light\">
                         Inscription
                     </a>
                 </li>
                 <li class=\"nav-item\">
-                    <a href=\"/login\" class=\"nav-link text-light\">
+                    <a href=\"/student/login\" class=\"nav-link text-light\">
                         Connection
                     </a>
                 </li>
@@ -96,12 +96,12 @@ class __TwigTemplate_409eacec01413e5ecfe0ee81920a3d35e3d154c789954ff9d98cfd46c2a
         <div class=\"collapse navbar-collapse justify-content-end\">
             <ul class=\"navbar-nav\">
                 <li class=\"nav-item\">
-                    <a href=\"/inscription\" class=\"nav-link text-light\">
+                    <a href=\"/student/inscription\" class=\"nav-link text-light\">
                         Inscription
                     </a>
                 </li>
                 <li class=\"nav-item\">
-                    <a href=\"/login\" class=\"nav-link text-light\">
+                    <a href=\"/student/login\" class=\"nav-link text-light\">
                         Connection
                     </a>
                 </li>

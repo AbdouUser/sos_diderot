@@ -75,7 +75,7 @@ class __TwigTemplate_d60e2210d52aaefbb903f022c797ce56f137eb25762ac0080fe41665552
                     ";
         }
         // line 21
-        echo "                    <form action=\"/staff/login\" method=\"POST\" class=\"form mb-4\" data-parsley-validate>
+        echo "                    <form action=\"stqff/login\" method=\"POST\" class=\"form mb-4\" data-parsley-validate>
                         <input name=\"email\" type=\"email\" class=\"form-control mb-2\" placeholder=\"Adresse email\" required \"
                         />
                         <input name=\"password\" type=\"password\" class=\"form-control mb-2\" placeholder=\"Mot de passe\" required
@@ -157,7 +157,7 @@ class __TwigTemplate_d60e2210d52aaefbb903f022c797ce56f137eb25762ac0080fe41665552
                       <div class=\"alert alert-danger\">
                           {{ errors.messageKey}}
                     {% endif %}
-                    <form action=\"/staff/login\" method=\"POST\" class=\"form mb-4\" data-parsley-validate>
+                    <form action=\"stqff/login\" method=\"POST\" class=\"form mb-4\" data-parsley-validate>
                         <input name=\"email\" type=\"email\" class=\"form-control mb-2\" placeholder=\"Adresse email\" required \"
                         />
                         <input name=\"password\" type=\"password\" class=\"form-control mb-2\" placeholder=\"Mot de passe\" required
@@ -186,6 +186,6 @@ class __TwigTemplate_d60e2210d52aaefbb903f022c797ce56f137eb25762ac0080fe41665552
 </div>
 
 {% endblock %}
-", "SOSDiderot/connexion.html.twig", "/var/www/sos_diderot/app/Resources/views/SOSDiderot/connexion.html.twig");
+", "SOSDiderot/connexion.html.twig", "/var/www/web2/sos_diderot/sos_diderot/app/Resources/views/SOSDiderot/connexion.html.twig");
     }
 }

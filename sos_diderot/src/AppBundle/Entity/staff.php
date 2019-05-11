@@ -17,8 +17,8 @@ class staff implements UserInterface
 {
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Calendar")
-     
-    private $calendar;*/
+     */
+    private $calendar;
     /**
      * @var int
      *
@@ -27,7 +27,7 @@ class staff implements UserInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      * @var string
      *
@@ -48,7 +48,7 @@ class staff implements UserInterface
      * @ORM\Column(name="first_name", type="string", length=255, nullable=true)
      */
     private $firstName;
-   
+
     /**
      * @var string
      *
@@ -221,7 +221,7 @@ class staff implements UserInterface
      * @param \AppBundle\Entity\Calendar $calendar
      *
      * @return staff
-     *
+     */
     public function addCalendar(\AppBundle\Entity\Calendar $calendar)
     {
         $this->calendar[] = $calendar;
@@ -233,7 +233,7 @@ class staff implements UserInterface
      * Remove calendar
      *
      * @param \AppBundle\Entity\Calendar $calendar
-     *
+     **/
     public function removeCalendar(\AppBundle\Entity\Calendar $calendar)
     {
         $this->calendar->removeElement($calendar);
@@ -243,11 +243,11 @@ class staff implements UserInterface
      * Get calendar
      *
      * @return \Doctrine\Common\Collections\Collection
-     *
+     */
     public function getCalendar()
     {
         return $this->calendar;
-    }*/
+    }
 
     /**
      * Set email

@@ -51,45 +51,22 @@ class __TwigTemplate_861b9c8f3179ed561318dad31b6342e8289c900b4ccc7862696df1ae3c9
         <div class=\"row\">
         <div class=\"col-lg-4 col-xs-4 col-md-4 col-xl-4  mt-3\" ></div>
    \t\t\t <div id=\"formulaire\" class=\"col-lg-4 col-xs-4 col-md-4 mt-3 col-xl-4 bg-light\">
-                        <form action=\"/staff/add\" method=\"post\" class=\"ui form\" onsubmit=\"return validateForm();\">
+                        <form action=\"/student/inscription\" method=\"post\" class=\"ui form\" onsubmit=\"return validateForm();\">
                             <div class=\"form-style-5\">
                                 <fieldset>
                                     <legend><img src=\"";
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/diplome.png"), "html", null, true);
         echo "\"/>S'inscrire</legend>
-                                    <input id=\"nom\" title=\"\" type=\"text\" name=\"name\" placeholder=\"Votre nom *\" \" onblur=\"verifnom()\"
+                                    <input id=\"nom\" title=\"\" type=\"text\" name=\"nom\" placeholder=\"Votre nom *\" \" onblur=\"verifnom()\"
                                     required>
-                                    <input id=\"prenom\" title=\"\"type=\"text\" name=\"firstName\" placeholder=\"Votre prénom *\" \"
+                                    <input id=\"prenom\" title=\"\"type=\"text\" name=\"prenom\" placeholder=\"Votre prénom *\" \"
                                     onblur=\"verifprenom()\" required>
                                     <input id=\"email\"type=\"email\" name=\"email\" placeholder=\"Votre e-email *\" onblur=\"verifMail()\"required>
                                     <input id=\"mdp\" title=\"\"type=\"password\" name=\"password\" placeholder=\"Votre mot de passe *\" onblur=\"verifmdp()\" required>
-                                    <input id=\"mdpc\" type=\"password\" name=\"pswd\" placeholder=\"Confirmation mot de passe *\"
+                                    <input id=\"mdpc\" type=\"password\" name=\"pswc\" placeholder=\"Confirmation mot de passe *\"
                                            onblur=\"verifmdpMatch()\" required>
-\t\t\t\t    <select data-trigger=\"\" name=\"ufr\">
-                <option placeholder=\"\" value=\"inf\">Informatique</option>
-                <option value=\"phy\">Physique</option>
-                <option value=\"sci\">Science et nature</option>
-                <option  value=\"his\">Histoire</option>
-                <option  value=\"chi\">Chimie</option>
-              </select>\t</br></br>
-\t\t\t\t     <select data-trigger=\"\" name=\"service\">
-                <option  value=\"soci\" placeholder=\"\">Social</option>
-                <option value=\"sch\">Scolarité</option>
-                <option value=\"bri\" >Relations Internationnales</option>
-                <option value=\"spr\">Service des sports</option>
-                <option value=\"sente\">Médecine de prévention</option>
-              </select>\t</br></br>
-                                    <select data-trigger=\"\" name=\"job\">
-                <option value=\"secr\" placeholder=\"\">secretaire</option>
-                <option value=\"prof\">Professeur</option>
-                <option value=\"resp\">responsable pédagogique</option>
-              </select>
-                                 </br></br>
-        
-                                    <input type=\"radio\" name=\"statut\" value=\"Etudiant\" required>Etudiant
-                                    <input type=\"radio\" name=\"statut\" value=\"Professionel\">Professionel
-                                    <br>
+                                   <input id=\"ine\" title=\"\" type=\"text\" name=\"ine\" placeholder=\"Numèro INE *\" onblur=\"verifINE()\" required>
                                     <input id=\"submit\" type=\"submit\" value=\"INSCRIPTION\"/>
                                 </fieldset>
                             </div>
@@ -98,7 +75,7 @@ class __TwigTemplate_861b9c8f3179ed561318dad31b6342e8289c900b4ccc7862696df1ae3c9
 \t\t</div>
 \t</div>
 \t \t";
-        // line 50
+        // line 27
         $this->displayBlock('javascripts', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -116,7 +93,7 @@ class __TwigTemplate_861b9c8f3179ed561318dad31b6342e8289c900b4ccc7862696df1ae3c9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 51
+        // line 28
         echo "        \t<script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/formulaire.js"), "html", null, true);
         echo "\" ></script>
@@ -141,7 +118,7 @@ class __TwigTemplate_861b9c8f3179ed561318dad31b6342e8289c900b4ccc7862696df1ae3c9
 
     public function getDebugInfo()
     {
-        return array (  120 => 51,  102 => 50,  59 => 10,  50 => 3,  41 => 2,  11 => 1,);
+        return array (  97 => 28,  79 => 27,  59 => 10,  50 => 3,  41 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -160,42 +137,19 @@ class __TwigTemplate_861b9c8f3179ed561318dad31b6342e8289c900b4ccc7862696df1ae3c9
         <div class=\"row\">
         <div class=\"col-lg-4 col-xs-4 col-md-4 col-xl-4  mt-3\" ></div>
    \t\t\t <div id=\"formulaire\" class=\"col-lg-4 col-xs-4 col-md-4 mt-3 col-xl-4 bg-light\">
-                        <form action=\"/staff/add\" method=\"post\" class=\"ui form\" onsubmit=\"return validateForm();\">
+                        <form action=\"/student/inscription\" method=\"post\" class=\"ui form\" onsubmit=\"return validateForm();\">
                             <div class=\"form-style-5\">
                                 <fieldset>
                                     <legend><img src=\"{{ asset('img/diplome.png') }}\"/>S'inscrire</legend>
-                                    <input id=\"nom\" title=\"\" type=\"text\" name=\"name\" placeholder=\"Votre nom *\" \" onblur=\"verifnom()\"
+                                    <input id=\"nom\" title=\"\" type=\"text\" name=\"nom\" placeholder=\"Votre nom *\" \" onblur=\"verifnom()\"
                                     required>
-                                    <input id=\"prenom\" title=\"\"type=\"text\" name=\"firstName\" placeholder=\"Votre prénom *\" \"
+                                    <input id=\"prenom\" title=\"\"type=\"text\" name=\"prenom\" placeholder=\"Votre prénom *\" \"
                                     onblur=\"verifprenom()\" required>
                                     <input id=\"email\"type=\"email\" name=\"email\" placeholder=\"Votre e-email *\" onblur=\"verifMail()\"required>
                                     <input id=\"mdp\" title=\"\"type=\"password\" name=\"password\" placeholder=\"Votre mot de passe *\" onblur=\"verifmdp()\" required>
-                                    <input id=\"mdpc\" type=\"password\" name=\"pswd\" placeholder=\"Confirmation mot de passe *\"
+                                    <input id=\"mdpc\" type=\"password\" name=\"pswc\" placeholder=\"Confirmation mot de passe *\"
                                            onblur=\"verifmdpMatch()\" required>
-\t\t\t\t    <select data-trigger=\"\" name=\"ufr\">
-                <option placeholder=\"\" value=\"inf\">Informatique</option>
-                <option value=\"phy\">Physique</option>
-                <option value=\"sci\">Science et nature</option>
-                <option  value=\"his\">Histoire</option>
-                <option  value=\"chi\">Chimie</option>
-              </select>\t</br></br>
-\t\t\t\t     <select data-trigger=\"\" name=\"service\">
-                <option  value=\"soci\" placeholder=\"\">Social</option>
-                <option value=\"sch\">Scolarité</option>
-                <option value=\"bri\" >Relations Internationnales</option>
-                <option value=\"spr\">Service des sports</option>
-                <option value=\"sente\">Médecine de prévention</option>
-              </select>\t</br></br>
-                                    <select data-trigger=\"\" name=\"job\">
-                <option value=\"secr\" placeholder=\"\">secretaire</option>
-                <option value=\"prof\">Professeur</option>
-                <option value=\"resp\">responsable pédagogique</option>
-              </select>
-                                 </br></br>
-        
-                                    <input type=\"radio\" name=\"statut\" value=\"Etudiant\" required>Etudiant
-                                    <input type=\"radio\" name=\"statut\" value=\"Professionel\">Professionel
-                                    <br>
+                                   <input id=\"ine\" title=\"\" type=\"text\" name=\"ine\" placeholder=\"Numèro INE *\" onblur=\"verifINE()\" required>
                                     <input id=\"submit\" type=\"submit\" value=\"INSCRIPTION\"/>
                                 </fieldset>
                             </div>
@@ -207,6 +161,6 @@ class __TwigTemplate_861b9c8f3179ed561318dad31b6342e8289c900b4ccc7862696df1ae3c9
         \t<script src=\"{{asset('js/formulaire.js')}}\" ></script>
        \t{% endblock %}
 {% endblock %}
-", "SOSDiderot/inscription.html.twig", "/var/www/sos_diderot/app/Resources/views/SOSDiderot/inscription.html.twig");
+", "SOSDiderot/inscription.html.twig", "/var/www/web2/sos_diderot/sos_diderot/app/Resources/views/SOSDiderot/inscription.html.twig");
     }
 }

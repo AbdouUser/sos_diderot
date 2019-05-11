@@ -185,6 +185,6 @@ class __TwigTemplate_8d313dfb87b13b2f8d54144e6c3ffbc11d0c8d1986c29956dca68ace48e
         })|raw }}
     </div>
 {% endif %}
-", "@Twig/Exception/trace.html.twig", "/var/www/sos_diderot/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/trace.html.twig");
+", "@Twig/Exception/trace.html.twig", "/var/www/web2/sos_diderot/sos_diderot/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/trace.html.twig");
     }
 }

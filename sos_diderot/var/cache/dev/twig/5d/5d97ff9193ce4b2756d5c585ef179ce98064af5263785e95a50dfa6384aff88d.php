@@ -591,6 +591,6 @@ class __TwigTemplate_7896388a5d119444867895a7772bbdc0a37271cb9816aaf8e5a696d3dcd
         }())
     </script>
 {% endblock %}
-", "@WebProfiler/Profiler/layout.html.twig", "/var/www/sos_diderot/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/layout.html.twig");
+", "@WebProfiler/Profiler/layout.html.twig", "/var/www/web2/sos_diderot/sos_diderot/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/layout.html.twig");
     }
 }

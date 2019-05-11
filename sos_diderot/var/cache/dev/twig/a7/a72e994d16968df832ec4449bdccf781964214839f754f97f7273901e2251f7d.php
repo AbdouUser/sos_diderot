@@ -23,7 +23,7 @@ class __TwigTemplate_50c2ac978ca255fee5873a80fa332ea9271af020f32c3b11108d3c0f6ba
 
         // line 1
         echo "<div class=\"s003\">
-      <form> 
+      <form>
         <div class=\"inner-form mt-4\">
           <div class=\"input-field first-wrap \">
             <div class=\"input-select\">
@@ -105,7 +105,7 @@ class __TwigTemplate_50c2ac978ca255fee5873a80fa332ea9271af020f32c3b11108d3c0f6ba
     public function getSourceContext()
     {
         return new Twig_Source("<div class=\"s003\">
-      <form> 
+      <form>
         <div class=\"inner-form mt-4\">
           <div class=\"input-field first-wrap \">
             <div class=\"input-select\">
@@ -149,6 +149,6 @@ class __TwigTemplate_50c2ac978ca255fee5873a80fa332ea9271af020f32c3b11108d3c0f6ba
       });
 
     </script>
-", "search.html.twig", "/var/www/sos_diderot/app/Resources/views/search.html.twig");
+", "search.html.twig", "/var/www/web2/sos_diderot/sos_diderot/app/Resources/views/search.html.twig");
     }
 }

@@ -421,6 +421,6 @@ class __TwigTemplate_f4a76301a8ac2326c5fec1388b79524aef2be8537f11a73d40abe95fae5
     });
 
 /*]]>*/</script>
-", "@Twig/base_js.html.twig", "/var/www/sos_diderot/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/base_js.html.twig");
+", "@Twig/base_js.html.twig", "/var/www/web2/sos_diderot/sos_diderot/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/base_js.html.twig");
     }
 }

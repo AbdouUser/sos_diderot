@@ -827,6 +827,6 @@ class __TwigTemplate_0977556076918eb636ab193beba2742141eab7d3afdc0d4869e5b337e72
         {% endif %}
     {% endfor %}
 {% endblock %}
-", "@Swiftmailer/Collector/swiftmailer.html.twig", "/var/www/sos_diderot/vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig");
+", "@Swiftmailer/Collector/swiftmailer.html.twig", "/var/www/web2/sos_diderot/sos_diderot/vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig");
     }
 }

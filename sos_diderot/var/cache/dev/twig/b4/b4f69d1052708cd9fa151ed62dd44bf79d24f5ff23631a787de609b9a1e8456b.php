@@ -1669,6 +1669,6 @@ class __TwigTemplate_66e4ac5f8f49401245e80cad862d2f87be30021e765edd760ccfa8205a0
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/var/www/sos_diderot/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/var/www/web2/sos_diderot/sos_diderot/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

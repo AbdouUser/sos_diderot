@@ -244,6 +244,6 @@ class __TwigTemplate_8b01588b8a959a491a5da0218ceec2ed62b919be26a4bccc41936f4fa37
 
     </body>
 </html>
-", "base.html.twig", "/var/www/sos_diderot/app/Resources/views/base.html.twig");
+", "base.html.twig", "/var/www/web2/sos_diderot/sos_diderot/app/Resources/views/base.html.twig");
     }
 }

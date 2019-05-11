@@ -171,6 +171,6 @@ class __TwigTemplate_9d93a82b0c8eeb8c9bb557e7ae432ed16e7da45cb21c2f08b3e568f730c
         </div>
     </div>
 </div>
-", "@Twig/Exception/traces.html.twig", "/var/www/sos_diderot/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces.html.twig");
+", "@Twig/Exception/traces.html.twig", "/var/www/web2/sos_diderot/sos_diderot/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces.html.twig");
     }
 }

@@ -1,0 +1,453 @@
+.select{
+  width:300px;
+}
+.intro-SOS {
+ margin-top:30px;
+ color: white;
+}
+
+.logo{
+    font-family: "Sofia";
+
+}
+.nav-link{
+  font-family: "Sofia";
+}
+.top-search {
+    margin-top:50px; margin-left: 200px ;
+}
+.toure{
+     width: 200px;
+     height: 120px;
+ }
+
+
+ .toure img {
+     width: 100%;
+     height: auto;
+ }
+
+
+* {
+    font-family: "Roboto", Arial, sans-serif;
+
+}
+
+.badge {
+    padding: .2em .4em !important;
+    border-radius: 50% !important;
+    position: relative;
+    top: -.4em;
+}
+
+.--bg-primary {
+    background: DeepSkyBlue  !important;
+}
+
+.--bg-light {
+    background: PowderBlue     !important;
+}
+
+.--text-primary {
+    color: indianred !important;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.logo {
+   cursor: pointer;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.form-control {
+    border: none !important;
+    background-color: #f0f0f0 !important;
+}
+
+.--btn-success {
+    background: #4bb162  !important;
+    border-color: #4bb162  !important;
+    color: white !important;
+}
+
+.pointable {
+    cursor: pointer;
+}
+
+.date {
+    position: relative;
+}
+
+.date:before {
+    position: absolute;
+    left: 0;
+    border-radius: 1.5em;
+    padding-left: 0.75em;
+    width: 100%;
+    background: #f0f0f0;
+    content: attr(placeholder);
+}
+.date:hover:before, .date:focus:before {
+    display: none;
+}
+
+.parsley-errors-list {
+    padding-left: 0;
+}
+
+.parsley-errors-list li {
+    color: red;
+    font-size: 0.9em;
+    list-style-type: none;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: relative;
+    height: 80vh;
+}
+.carousel-item:after {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background: #a06060;
+    opacity: 0.75;
+}
+
+.carousel-item .fore-img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: 1;
+}
+
+.fore-img .desc {
+    font-size: 3.5em;
+    padding: 1em;
+}
+
+#signup-sec {
+    position: relative;
+    top: -30vh;
+    z-index: 2;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+}
+
+.user-img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-desc {
+
+}
+
+.like-person-icon {
+    height: 20px;
+}
+
+.nav-sep {
+    height: 30px;
+    display: block;
+    float: left;
+}
+
+header .dropdown-menu {
+    border: none;
+    border-radius: 0;
+}
+
+header .dropdown-menu .dropdown-item {
+    border-radius: 0;
+}
+header .dropdown-menu .dropdown-item:active, header .dropdown-menu .dropdown-item:hover {
+    background: indianred;
+    color: #fff;
+}
+
+.login-link, .logout-link {
+    color: indianred !important;
+    border-radius: 0 !important;
+}
+
+.home-icon, .notification-icon, .messages-icon, .user-icon {
+    height: 26px;
+}
+
+.messages-icon {
+    height: 30px;
+}
+
+.default-cursor {
+    cursor: default;
+}
+
+.--btn-primary, .--btn-primary:disabled:hover {
+    background: indianred !important;
+    border-color: indianred !important;
+    color: white !important;
+}
+.--btn-primary:hover {
+    background: #a74242 !important;
+    border-color: #a74242 !important;
+}
+
+.--btn-outline-primary, .--btn-outline-primary:disabled:hover {
+    background: inherit !important;
+    color: indianred !important;
+}
+
+.pic-icon {
+    height: 20px;
+}
+
+.photo-post {
+    width: 100%;
+    height: 100%;
+    max-height: 75vh;
+    object-fit: cover;
+}
+
+.like-icon, .comment-icon {
+    opacity: 0.7;
+}
+
+.like-icon {
+    height: 26px;
+}
+
+.likes-icon {
+    height: 40px;
+}
+
+.comment-icon {
+    height: 28px;
+}
+
+textarea.form-control, textarea.form-control:focus {
+    box-shadow: none;
+}
+
+#img-to-post {
+
+}
+
+.removable {
+    position: relative;
+}
+
+.removable .remover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: url('/img/svg/delete.svg');
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    border-radius: 50% 50%;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
+}
+
+a.decoration-none, a.decoration-none:hover {
+   text-decoration: none;
+}
+
+.r-arrow {
+    opacity: 0.6;
+    height: 18px;
+}
+.r-arrow:hover, a:hover .r-arrow {
+    opacity: 1;
+}
+
+.profile-edit-icon, .preferences-icon {
+    height: 30px;
+}
+
+.font-sm {
+    font-size: 0.8em;
+}
+
+.male-icon, .home-adress-icon, .current-adress-icon, .birthday-icon {
+    height: 20px;
+}
+
+#prof-pic-selec {
+    position: absolute;
+    bottom: 1.2em;
+}
+
+.person-img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: 0 25%;
+    object-position: center;
+}
+
+#persons, #persons > div {
+    height: 60vh;
+}
+
+#persons > div {
+    position: relative;
+}
+
+#like-or-next {
+    position: absolute;
+    bottom: 1em;
+}
+
+#person-liker, #flesh {
+    position: relative;
+    height: 64px;
+}
+
+#stranger {
+    position: relative;
+    opacity: 0;
+}
+
+.skipped-stranger {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.sticky-nav {
+    position: sticky !important;
+    top: 0;
+    z-index: 1;
+}
+
+#chat-section {
+    height: 75vh;
+}
+
+#chat-box {
+    height: 100%;
+}
+
+#chat-msgs {
+    height: 70%;
+}
+
+.body-img {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.rounded-diag-left {
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.rounded-diag-right {
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+#chat-msgs {
+    overflow-y: scroll;
+}
+
+#bodies-list {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.in-rel-icon {
+    height: 64px;
+}
+
+/**
+ * sm screen
+ */
+@media screen and (max-width: 575px) {
+    .logo {
+        margin-left: 0 !important;
+    }
+
+
+}
+/**
+ * md screen
+ */
+@media screen and (max-width: 991px) {
+  .logo {
+      margin-left: 0 !important;
+  }
+}
+
+
+/**********************************************************************************/
+
+
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+
+
+
+
+
+
+

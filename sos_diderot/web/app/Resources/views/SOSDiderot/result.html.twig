@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    {% include('search.html.twig') %}
+
+    {% for row in result %}
+        <div class="bg-white mt-3 d-flex rounded">
+            <h4 class="text-capitalize my-auto ml-3" style="min-width: 240px;">
+                <a href="" class="text-success" style="text-decoration: none;">
+                    {{ row.firstName }} {{ row.name }}
+                </a>
+            </h4>
+            <table class="table table-borderless m-0 rounded">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Ufr</th>
+                        <th>Université</th>
+                        <th>Service</th>
+                        <th>Métier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ row.ufrPlain }}</td>
+                        <td>{{ row.universityPlain }}</td>
+                        <td>{{ row.servicePlain }}</td>
+                        <td>{{ row.jobPlain }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+
+{% endblock %}

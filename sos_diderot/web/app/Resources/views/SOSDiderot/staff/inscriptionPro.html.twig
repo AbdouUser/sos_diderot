@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-4 col-xs-4 col-md-4 col-xl-4  mt-3" ></div>
+   			 <div id="formulaire" class="col-lg-4 col-xs-4 col-md-4 mt-3 col-xl-4 bg-light">
+                        <form action="/staff/add" method="post" class="ui form" onsubmit="return validateForm();">
+                            <div class="form-style-5">
+                                <fieldset>
+                                    <legend>Inscription professionnel</legend>
+                                    <input id="nom" title="" type="text" name="nom" placeholder="Votre nom *" " onblur="verifnom()"
+                                    required>
+                                    <input id="prenom" title=""type="text" name="prenom" placeholder="Votre prénom *" "
+                                    onblur="verifprenom()" required>
+                                    <input id="email"type="email" name="email" placeholder="Votre e-email *" onblur="verifMail()"required>
+                                    <input id="mdp" title=""type="password" name="password" placeholder="Votre mot de passe *" onblur="verifmdp()" required>
+                                    <input id="mdpc" type="password" name="pswc" placeholder="Confirmation mot de passe *"
+                                           onblur="verifmdpMatch()" required>
+                                           <span>Ufr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                           <select data-trigger="" name="ufr">
+                                               <option placeholder="" value="Ufr">Informatique</option>
+                                               <option value="Physique">Physique</option>
+                                               <option value="Science et nature">Science et nature</option>
+                                               <option  value="Histoire">Histoire</option>
+                                               <option  value="Chimie">Chimie</option>
+                                             </select>	</br></br>
+                                             <span>Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                               				     <select data-trigger="" name="service">
+                                               <option  value="Social" placeholder="">Social</option>
+                                               <option value="Scolarité">Scolarité</option>
+                                               <option value="Relations Internationnales" >Relations Internationnales</option>
+                                               <option value="Service des sports">Service des sports</option>
+                                               <option value="Médecine de prévention">Médecine de prévention</option>
+                                               <option value="Enseignement">Enseignement</option>
+                                             </select>	</br></br>
+                                             <span>Métier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</span>
+                                            <select data-trigger="" name="job">
+                                               <option value="secrétaire" placeholder="">secrétaire</option>
+                                               <option value="Professeur">Professeur</option>
+                                               <option value="responsable pédagogique">responsable pédagogique</option>
+                                               <option value="Médecin">Médecin</option>
+                                               <option value="Infirmier">Infirmier</option>
+                                             </select>
+                                             <br><br>
+                                             <span>Université&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            <select data-trigger="" name="university">
+                                               <option value="Paris Diderot" placeholder="">Université Paris Diderot</option>
+                                               <option value="Paris Descarte">Université Paris Descarte</option>
+                                               <option value="Institut de Physique du Globe">Institut de Physique</option>
+                                             </select>
+                                                                </br></br>
+                                    <input id="submit" type="submit" value="INSCRIPTION"/>
+                                </fieldset>
+                            </div>
+                        </form>
+             </div>
+		</div>
+	</div>
+	 	{% block javascripts %}
+        	<script src="{{asset('js/formulaire.js')}}" ></script>
+       	{% endblock %}
+{% endblock %}

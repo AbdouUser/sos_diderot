@@ -1,0 +1,55 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        AppBundle\Entity\student:
+            algorithm: bcrypt
+        AppBundle\Entity\staff:
+            algorithm: bcrypt
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+
+    providers:
+        db_provider:
+            entity:
+                class: AppBundle:student
+                property: email
+
+        db_provider_1:
+            entity:
+                class: AppBundle:staff
+                property: email
+
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main_1:
+            pattern: ^/staff
+            provider: db_provider_1
+            anonymous: ~
+            form_login:
+                username_parameter: email
+                password_parameter: password
+                login_path: loginPro
+                check_path: loginPro
+                default_target_path: accueilStaf
+            logout:
+                path: logout
+                target: /
+
+        main:
+            provider: db_provider
+            anonymous: ~
+            form_login:
+                username_parameter: email
+                password_parameter: password
+                login_path: login
+                check_path: login
+                default_target_path: accueil
+            logout:
+                path: logout
+                target: /

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-xs-4 col-md-4 col-xl-4  mt-3"></div>
+            <div id="formulaire" class="col-lg-4 col-xs-4 col-md-4 mt-3 col-xl-4 bg-light">
+                <form action="/staff/add" method="post" class="ui form" onsubmit="return validateForm();">
+                    <div class="form-style-5">
+                        <fieldset>
+                            <legend>Inscription professionnel</legend>
+                            <input id="nom" title="" type="text" name="nom" placeholder="Votre nom *" "
+                            onblur="verifnom()"
+                            required>
+                            <input id="prenom" title="" type="text" name="prenom" placeholder="Votre prénom *" "
+                            onblur="verifprenom()" required>
+                            <input id="email" type="email" name="email" placeholder="Votre e-email *"
+                                   onblur="verifMail()" required>
+                            <input id="mdp" title="" type="password" name="password" placeholder="Votre mot de passe *"
+                                   onblur="verifmdp()" required>
+                            <input id="mdpc" type="password" name="pswc" placeholder="Confirmation mot de passe *"
+                                   onblur="verifmdpMatch()" required>
+                            <span>Ufr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <select data-trigger="" name="ufr">
+                                <option placeholder="" value="inf">Informatique</option>
+                                <option value="phy">Physique</option>
+                                <option value="sci">Science et nature</option>
+                                <option value="his">Histoire</option>
+                                <option value="chi">Chimie</option>
+                            </select>    </br></br>
+                            <span>Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <select data-trigger="" name="service">
+                                <option value="soci" placeholder="">Social</option>
+                                <option value="sch">Scolarité</option>
+                                <option value="bri">Relations Internationnales</option>
+                                <option value="spr">Service des sports</option>
+                                <option value="sente">Médecine de prévention</option>
+                                <option value="ense">Enseignement</option>
+                            </select>    </br></br>
+                            <span>Métier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</span>
+                            <select data-trigger="" name="job">
+                                <option value="secr" placeholder="">secretaire</option>
+                                <option value="prof">Professeur</option>
+                                <option value="resp">responsable pédagogique</option>
+                                <option value="resp">Médecin</option>
+                                <option value="resp">Infirmier</option>
+                            </select>
+                            <br><br>
+                            <span>Université&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <select data-trigger="" name="university">
+                                <option value="p7" placeholder="">Université Paris Diderot</option>
+                                <option value="p6">Université Paris Descarte</option>
+                                <option value="p5">Institut de Physique</option>
+                            </select>
+                            </br></br>
+                            <input id="submit" type="submit" value="INSCRIPTION"/>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% block javascripts %}
+        <script src="{{ asset('js/formulaire.js') }}"></script>
+    {% endblock %}
+{% endblock %}

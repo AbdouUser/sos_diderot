@@ -278,7 +278,7 @@ class StudentController extends AbstractController
                   $user = $this->getUser();
                   $encoded = $encoder->encodePassword($user, $data['pswNouv']);
                   $encodedActuelle=$encoder->encodePassword($user, $data['pswActuelle']);
-                  if($encodedActuelle != $user->getPassword()){
+                  if($data['pswActuelle'] !=  $user->getPassword()){
                     $this->addFlash(
                        'warning',
                        'Votre mot de passe actuelle est incorrect'

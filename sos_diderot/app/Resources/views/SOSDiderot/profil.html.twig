@@ -14,7 +14,7 @@
                     <div class="col-lg-12 col-md-12 col-xl-12 col-xs-12">
                         <!-- user name -->
                         <h3 class="text-center text-dark col-lg-12 text-capitalize mt-2">
-                            {{user.nom}} {{user.prenom}}
+                            {{app.session.get('nom')}} {{app.session.get('prenom')}}
                         </h3>
 
 
@@ -22,20 +22,14 @@
                         <br>
                         <div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 px-0 ">
                           <div class="align-items-start d-flex mt-1">
-                          {% if user.statut=="Etudiant" %}
-                                Formation actuelle: {{app.session.get('formation')}}
-                          {% else %}
-                                Poste actuel : {{user.poste}}
 
-                          {% endif %}
+                                Formation actuelle: {{app.session.get('formation')}}
                            </div>
 
                            <div class="align-items-start d-flex mt-1">
-                           {% if user.statut=="Etudiant" %}
+
                                  Université  actuelle: {{app.session.get('university')}}
-                           {% else %}
-                                 Ufr actuelle &nbsp;&nbsp;: {{user.ufr}}
-                           {% endif %}
+
                             </div>
                         </div>
                                 <!-- profile edit -->

@@ -75,7 +75,7 @@ class __TwigTemplate_d60e2210d52aaefbb903f022c797ce56f137eb25762ac0080fe41665552
                     ";
         }
         // line 21
-        echo "                    <form action=\"stqff/login\" method=\"POST\" class=\"form mb-4\" data-parsley-validate>
+        echo "                    <form action=\"/student/login\" method=\"POST\" class=\"form mb-4\" data-parsley-validate>
                         <input name=\"email\" type=\"email\" class=\"form-control mb-2\" placeholder=\"Adresse email\" required \"
                         />
                         <input name=\"password\" type=\"password\" class=\"form-control mb-2\" placeholder=\"Mot de passe\" required
@@ -95,6 +95,13 @@ class __TwigTemplate_d60e2210d52aaefbb903f022c797ce56f137eb25762ac0080fe41665552
                         <a href=\"/inscription\" class=\"text-info font-weight-normal\">
                             S'inscrire ?
                         </a>
+                        <br>
+                        <span>
+                            vous êtes un personnel de l'université de Paris ?
+                        </span>
+                            <a href=\"/staff/loginPro\" class=\"text-info font-weight-normal\">
+                                connexion ?
+                            </a>
                     </h6>
                 </div>
             </section>
@@ -157,7 +164,7 @@ class __TwigTemplate_d60e2210d52aaefbb903f022c797ce56f137eb25762ac0080fe41665552
                       <div class=\"alert alert-danger\">
                           {{ errors.messageKey}}
                     {% endif %}
-                    <form action=\"stqff/login\" method=\"POST\" class=\"form mb-4\" data-parsley-validate>
+                    <form action=\"/student/login\" method=\"POST\" class=\"form mb-4\" data-parsley-validate>
                         <input name=\"email\" type=\"email\" class=\"form-control mb-2\" placeholder=\"Adresse email\" required \"
                         />
                         <input name=\"password\" type=\"password\" class=\"form-control mb-2\" placeholder=\"Mot de passe\" required
@@ -177,6 +184,13 @@ class __TwigTemplate_d60e2210d52aaefbb903f022c797ce56f137eb25762ac0080fe41665552
                         <a href=\"/inscription\" class=\"text-info font-weight-normal\">
                             S'inscrire ?
                         </a>
+                        <br>
+                        <span>
+                            vous êtes un personnel de l'université de Paris ?
+                        </span>
+                            <a href=\"/staff/loginPro\" class=\"text-info font-weight-normal\">
+                                connexion ?
+                            </a>
                     </h6>
                 </div>
             </section>

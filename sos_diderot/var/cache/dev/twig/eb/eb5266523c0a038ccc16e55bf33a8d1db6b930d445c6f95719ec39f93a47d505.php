@@ -124,6 +124,6 @@ class __TwigTemplate_aa5c66daace67a81cbb6292c96446bac82405d042370bee7d9f4361baba
     
 </div>
     
-", "staff/staffList.html.twig", "/var/www/sos_diderot/app/Resources/views/staff/staffList.html.twig");
+", "staff/staffList.html.twig", "/var/www/web2/sos_diderot/sos_diderot/app/Resources/views/staff/staffList.html.twig");
     }
 }

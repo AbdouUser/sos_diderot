@@ -157,4 +157,144 @@ class StudentController extends AbstractController
 
         return $this->render('SOSDiderot/inscription.html.twig');
     }
+
+    /**
+     * @Route("/accueil", name="accueil")
+     */
+        public function SOSPAccueil(Request $request)
+        {   $session = $request->getSession();
+            $session->set('headerName', 'header-authenticated.html.twig');
+            $user = $this->getUser();
+            $session->set('nom',$user->getName());
+            $session->set('prenom',$user->getFirstName());
+            $session->set('formation',$user->getFormation());
+            $session->set('university',$user->getUniversity());
+
+            // replace this example code with whatever you need
+            return $this->render('SOSDiderot/accueil.html.twig');
+        }
+
+        /**
+     * @Route("/profile", name="profile")
+     */
+    public function SOSProfile(Request $request)
+    {
+      $user =$this->getUser();
+      dump($user->getName());
+      return $this->render('SOSDiderot/profil.html.twig', ['user'=>$user]);;
+    }
+
+    /**
+    * @Route("/rendez_vous", name="rendez_vous")
+    */
+    public function SOSRendezVous(Request $request)
+    {
+    return $this->render('SOSDiderot/rendez_vous.html.twig');
+    }
+
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function SOSLogout(Request $request)
+    {
+        // replace this example code with whatever you need
+        $session = $request->getSession();
+        $session->set('headerName', 'header-anonym.html.twig');
+        return $this->render('SOSDiderot/SOSDiderot.html.twig');
+    }
+
+    /**
+    * @Route("/profile-update", name="profile-update")
+    */
+    public function SOSProfileUpdate(Request $request)
+    {
+      if ($request->isMethod('post')){
+
+            $data=$request->request->all();
+            $user = $this->getUser();
+            $user->setName($data['nom']);
+            $user->setFirstName($data['prenom']);
+            $user->setFormation($data['formation']);
+            $user->setUniversity($data['university']);
+            $em= $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+            $em->refresh($user);
+            $session = $request->getSession();
+            $session->set('nom',$user->getName());
+            $session->set('prenom',$user->getFirstName());
+            $session->set('formation',$user->getFormation());
+            $session->set('university',$user->getUniversity());
+            return $this->redirectToRoute('profile');
+            }
+
+
+
+    return $this->render('SOSDiderot/profil.html.twig');
+    }
+
+    /**
+     * @Route("/settings", name="settings")
+     */
+    public function SOSSettings(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('SOSDiderot/settings.html.twig');
+    }
+
+    /**
+         * @Route("/email-update", name="email-update")
+         */
+        public function SOSUpdateMail(Request $request)
+        {
+          if ($request->isMethod('post')){
+
+                $data=$request->request->all();
+                $user = $this->getUser();
+                $user->setEmail($data['email']);
+                $em= $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+                $em->refresh($user);
+                $this->addFlash(
+                		'success',
+                		'Votre email a été mise à jour'
+                	);
+                return $this->redirectToRoute('settings');
+                }
+            return $this->render('SOSDiderot/email-update.html.twig');
+        }
+
+
+        /**
+         * @Route("/passwordUpdate", name="passwordUpdate")
+         */
+        public function SOSPasswordUpdate(Request $request, UserPasswordEncoderInterface $encoder)
+        {
+
+            if ($request->isMethod('post')){
+
+                  $data=$request->request->all();
+                  $user = $this->getUser();
+                  $encoded = $encoder->encodePassword($user, $data['pswNouv']);
+                  $encodedActuelle=$encoder->encodePassword($user, $data['pswActuelle']);
+                  if($encodedActuelle != $user->getPassword()){
+                    $this->addFlash(
+                       'warning',
+                       'Votre mot de passe actuelle est incorrect'
+                     );
+                     return $this->render('SOSDiderot/passwordUpdate.html.twig');
+                  }
+                  $user->setPassword($encoded);
+                  $em= $this->getDoctrine()->getManager();
+                  $em->persist($user);
+                  $em->flush();
+                  $em->refresh($user);
+                  return $this->redirectToRoute('settings');
+                  }
+
+
+            return $this->render('SOSDiderot/passwordUpdate.html.twig');
+        }
+
 }

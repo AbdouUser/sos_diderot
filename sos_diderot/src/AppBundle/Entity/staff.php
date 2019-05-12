@@ -15,10 +15,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class staff implements UserInterface
 {
-    /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Calendar")
-     */
-    private $calendar;
+
     /**
      * @var int
      *
@@ -207,47 +204,7 @@ class staff implements UserInterface
     {
         return $this->job;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->calendar = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add calendar
-     *
-     * @param \AppBundle\Entity\Calendar $calendar
-     *
-     * @return staff
-     */
-    public function addCalendar(\AppBundle\Entity\Calendar $calendar)
-    {
-        $this->calendar[] = $calendar;
-
-        return $this;
-    }
-
-    /**
-     * Remove calendar
-     *
-     * @param \AppBundle\Entity\Calendar $calendar
-     **/
-    public function removeCalendar(\AppBundle\Entity\Calendar $calendar)
-    {
-        $this->calendar->removeElement($calendar);
-    }
-
-    /**
-     * Get calendar
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCalendar()
-    {
-        return $this->calendar;
-    }
+    
 
     /**
      * Set email

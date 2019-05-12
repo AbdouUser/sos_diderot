@@ -199,6 +199,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_staff_delete']), array (  '_controller' => 'AppBundle\\Controller\\StaffController::delete',));
             }
 
+            // loginPro
+            if ('/staff/loginPro' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StaffController::SOSLoginPro',  '_route' => 'loginPro',);
+            }
+
             // add
             if ('/staff/add' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\StaffController::add',  '_route' => 'add',);
@@ -222,9 +227,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\StudentController::add',  '_route' => 'oc_Student_add',);
             }
 
+            // accueil
+            if ('/student/accueil' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSPAccueil',  '_route' => 'accueil',);
+            }
+
             // oc_Student_edit
             if (0 === strpos($pathinfo, '/student/edit') && preg_match('#^/student/edit/(?P<id>\\d+)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'oc_Student_edit']), array (  '_controller' => 'AppBundle\\Controller\\StudentController::edit',));
+            }
+
+            // email-update
+            if ('/student/email-update' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSUpdateMail',  '_route' => 'email-update',);
             }
 
             // oc_Student_delete
@@ -237,9 +252,42 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSLogin',  '_route' => 'login',);
             }
 
+            // logout
+            if ('/student/logout' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSLogout',  '_route' => 'logout',);
+            }
+
             // inscription
             if ('/student/inscription' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSInscription',  '_route' => 'inscription',);
+            }
+
+            if (0 === strpos($pathinfo, '/student/profile')) {
+                // profile
+                if ('/student/profile' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSProfile',  '_route' => 'profile',);
+                }
+
+                // profile-update
+                if ('/student/profile-update' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSProfileUpdate',  '_route' => 'profile-update',);
+                }
+
+            }
+
+            // passwordUpdate
+            if ('/student/passwordUpdate' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSPasswordUpdate',  '_route' => 'passwordUpdate',);
+            }
+
+            // rendez_vous
+            if ('/student/rendez_vous' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSRendezVous',  '_route' => 'rendez_vous',);
+            }
+
+            // settings
+            if ('/student/settings' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\StudentController::SOSSettings',  '_route' => 'settings',);
             }
 
         }

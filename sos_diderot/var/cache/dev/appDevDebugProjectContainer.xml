@@ -558,7 +558,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.y4lbt1n"/>
+      <argument type="service" id="service_locator.bmouxft"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -4385,17 +4385,25 @@
         <argument key="mailer" type="service" id="swiftmailer.mailer.default" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id="service_locator.y4lbt1n" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.bplvum6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="AppBundle\Controller\StaffController:SOSLogin" type="service" id="service_locator.9r1qt7y"/>
+        <argument key="encoder" type="service" id="security.user_password_encoder.generic" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id="service_locator.bmouxft" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="AppBundle\Controller\StaffController:SOSLoginPro" type="service" id="service_locator.9r1qt7y"/>
         <argument key="AppBundle\Controller\StaffController:add" type="service" id="service_locator.vb8prsf"/>
         <argument key="AppBundle\Controller\StudentController:SOSInscription" type="service" id="service_locator.zblmzho"/>
         <argument key="AppBundle\Controller\StudentController:SOSLogin" type="service" id="service_locator.qx07crr"/>
-        <argument key="AppBundle\Controller\StaffController::SOSLogin" type="service" id="service_locator.9r1qt7y"/>
+        <argument key="AppBundle\Controller\StudentController:SOSPasswordUpdate" type="service" id="service_locator.bplvum6"/>
+        <argument key="AppBundle\Controller\StaffController::SOSLoginPro" type="service" id="service_locator.9r1qt7y"/>
         <argument key="AppBundle\Controller\StaffController::add" type="service" id="service_locator.vb8prsf"/>
         <argument key="AppBundle\Controller\StudentController::SOSInscription" type="service" id="service_locator.zblmzho"/>
         <argument key="AppBundle\Controller\StudentController::SOSLogin" type="service" id="service_locator.qx07crr"/>
+        <argument key="AppBundle\Controller\StudentController::SOSPasswordUpdate" type="service" id="service_locator.bplvum6"/>
       </argument>
     </service>
     <service id="service_locator.8vuqatr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">

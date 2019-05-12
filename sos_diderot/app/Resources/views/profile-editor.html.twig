@@ -9,7 +9,7 @@
                     &times;
                 </button>
             </div>
-            <form action="/profile-update" method="post"
+            <form action="/student/profile-update" method="post"
                   onsubmit="return validateForm2();">
                 <div class="modal-body">
 
@@ -23,45 +23,14 @@
                                name="nom" onblur="verifnom()"/>
                     </div>
                     <!-- description -->
-                {% if user.statut=="Etudiant" %}
+
                     <input id="formation" class="form-control form-control mr-1 text-capitalize mt-3" placeholder="Foramtion actuelle"
-                              name="formation" value="{{app.session.get('formation')}}" data-default="{{app.session.get('formation')}}" onblur="verifFormation()"/>
+                              name="formation"  value="{{app.session.get('formation')}}" data-default="{{app.session.get('formation')}}" onblur="verifFormation()"/>
 
 
                   <input id="university" class="form-control form-control mr-1 text-capitalize mt-3" placeholder="Université actuelle"
                     name="university" value="{{app.session.get('university')}}" data-default="{{app.session.get('university')}}" onblur="verifUniv()"/>
                 </div>
-                {% else %}
-
-                    <div class="input-select mt-3">
-                      Poste actuelle
-                      <select data-trigger="" name="postee" class="select">
-                        <option placeholder="">{% if user.poste=="non renseigné" %}Poste actuelle{% else %} {{user.poste}}{% endif %}</option>
-                        <option>Scolarité</option>
-                        <option>Professeur</option>
-                        <option>Service crous</option>
-                        <option>Service des sports</option>
-                        <option>Assistant social</option>
-                        <option>Médecine de prévention</option>
-                        <option>responsable pédagogique</option>
-                      </select>
-                    </div>
-                    <div class="input-select mt-3">
-                      Ufr actuelle &nbsp;&nbsp;&nbsp;&nbsp;
-                      <select data-trigger="" name="ufr" class="select">
-                        <option placeholder="">{% if user.ufr=="non renseigné" %}nom de l'ufr{% else %} {{user.ufr}}{% endif %}</option>
-                        <option>Linguistique</option>
-                        <option>Informatique</option>
-                        <option>Médecine</option>
-                        <option>Mathématiques</option>
-                        <option>Physique</option>
-                        <option>Sciences du vivant</option>
-                        <option>Géographie, histoire et Economie</option>
-                        <option>non renseigné</option>
-                      </select>
-                    </div>
-
-          {% endif %}
 
                 <div class="modal-footer">
                     <button class="btn --btn-outline-primary font-weight-bold" data-dismiss="modal">

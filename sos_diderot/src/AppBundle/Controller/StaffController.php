@@ -21,8 +21,6 @@ use AppBundle\Entity\staff;
  */
 class StaffController extends AbstractController
 {
-
-
   /**
    * @Route("/{page}", name="oc_stuff_index", requirements={"page" = "\d+"}, defaults={"page" = 1})
    */
@@ -93,17 +91,17 @@ class StaffController extends AbstractController
   }
 
 
-  /**
-     * @Route("/login", name="login")
+    /**
+     * @Route("/loginPro", name="loginPro")
      */
-    public function SOSLogin(Request $request, AuthenticationUtils $authenticationUtils)
+    public function SOSLoginPro(Request $request, AuthenticationUtils $authenticationUtils)
     {
         $errors= $authenticationUtils->getLastAuthenticationError();
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
         // replace this example code with whatever you need
-        return $this->render('SOSDiderot/connexion.html.twig',array(
+        return $this->render('SOSDiderot/connexionPro.html.twig',array(
           'errors'=>$errors,
           'last_username'=>$lastUsername,
         ));

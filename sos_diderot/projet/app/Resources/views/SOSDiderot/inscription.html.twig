@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-4 col-xs-4 col-md-4 col-xl-4  mt-3" ></div>
+   			 <div id="formulaire" class="col-lg-4 col-xs-4 col-md-4 mt-3 col-xl-4 bg-light">
+                        <form action="/student/inscription" method="post" class="ui form" onsubmit="return validateForm();">
+                            <div class="form-style-5">
+                                <fieldset>
+                                    <legend><img src="{{ asset('img/diplome.png') }}"/>S'inscrire</legend>
+                                    <input id="nom" title="" type="text" name="nom" placeholder="Votre nom *" " onblur="verifnom()"
+                                    required>
+                                    <input id="prenom" title=""type="text" name="prenom" placeholder="Votre prénom *" "
+                                    onblur="verifprenom()" required>
+                                    <input id="email"type="email" name="email" placeholder="Votre e-email *" onblur="verifMail()"required>
+                                    <input id="mdp" title=""type="password" name="password" placeholder="Votre mot de passe *" onblur="verifmdp()" required>
+                                    <input id="mdpc" type="password" name="pswc" placeholder="Confirmation mot de passe *"
+                                           onblur="verifmdpMatch()" required>
+                                   <input id="ine" title="" type="text" name="ine" placeholder="Numèro INE *" onblur="verifINE()" required>
+                                    <input id="submit" type="submit" value="INSCRIPTION"/>
+                                </fieldset>
+                            </div>
+                        </form>
+             </div>
+		</div>
+	</div>
+	 	{% block javascripts %}
+        	<script src="{{asset('js/formulaire.js')}}" ></script>
+       	{% endblock %}
+{% endblock %}

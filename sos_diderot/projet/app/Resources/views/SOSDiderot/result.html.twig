@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    {% include('search.html.twig') %}
+
+    {% for row in result %}
+        <div class="bg-white mt-3">
+            <table class="table font-sm table-striped table-borderless mb-0">
+                <thead class="bg-success text-light">
+                    <tr>
+                        <th>Nom et prénom</th>
+                        <th>Université</th>
+                        <th>Ufr</th>
+                        <th>Service</th>
+                        <th>Métier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="/staff/calendar/{{ row.id }}" class="text-success text-capitalize" style="text-decoration: none;">
+                                {{ row.firstName }} {{ row.name }}
+                            </a>
+                        </td>
+                        <td>{{ row.university }}</td>
+                        <td>{{ row.ufr }}</td>
+                        <td>{{ row.service }}</td>
+                        <td>{{ row.job }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+
+{% endblock %}

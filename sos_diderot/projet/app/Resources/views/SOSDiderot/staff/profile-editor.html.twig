@@ -1,0 +1,49 @@
+<div id="profile-editor" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Modifier le profil
+                </h5>
+                <button class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+            <form action="/student/profile-update" method="post"
+                  onsubmit="return validateForm2();">
+                <div class="modal-body">
+
+                    <!-- first name and last name -->
+                    <div class="d-flex justify-content-center mt-2">
+                        <input id="prenom" class="form-control form-control mr-1 text-capitalize" placeholder="Prénom"
+                               value="{{user.firstName}}" data-default="{{user.firstName}}"
+                               name="prenom" onblur="verifprenom()"/>
+                        <input id="nom" class="form-control form-control ml-1 text-capitalize" placeholder="Nom"
+                               value="{{user.name}}" data-default="{{user.name}}"
+                               name="nom" onblur="verifnom()"/>
+                    </div>
+                    <!-- description -->
+
+                    <input id="formation" class="form-control form-control mr-1 text-capitalize mt-3" placeholder="Foramtion actuelle"
+                              name="formation"  value="{{app.session.get('formation')}}" data-default="{{app.session.get('formation')}}" onblur="verifFormation()"/>
+
+
+                  <input id="university" class="form-control form-control mr-1 text-capitalize mt-3" placeholder="Université actuelle"
+                    name="university" value="{{app.session.get('university')}}" data-default="{{app.session.get('university')}}" onblur="verifUniv()"/>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn --btn-outline-primary font-weight-bold" data-dismiss="modal">
+                        ANNULER
+                    </button>
+                    <input type="submit" class="btn btn-primary" value="Enregister"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% block javascripts %}
+
+     <script src="{{asset('js/formulaire.js')}}"></script>
+
+{% endblock %}

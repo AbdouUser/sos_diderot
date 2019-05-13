@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: sos
+    database_user: moxa
+    database_password: '0000'
+    mailer_transport: smtp
+    mailer_host: mail.smtp2go.com
+    mailer_user: mohaxoy98@gmail.com
+    mailer_password: bujhb07
+    secret: f858269a2bb9079e2b425e771bce09fe2163e940

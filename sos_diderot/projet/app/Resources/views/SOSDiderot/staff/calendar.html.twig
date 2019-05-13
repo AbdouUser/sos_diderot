@@ -1,0 +1,278 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="w-100 bg-white p-2">
+        <form method="post" action="/student/rdv">
+            <input type="hidden" name="day" id="day"/>
+            <input type="hidden" name="hour" id="hour"/>
+            <input type="hidden" name="staff" id="staff" value="{{ staff.id }}"/>
+
+            <div id="nodes" style="display: grid; grid-template-columns: repeat(7, auto); grid-template-rows: repeat(10, auto);">
+                <!-- row 0 -->
+                <div></div>
+                <div class="bg-success border-left border-light text-light p-2">
+                    Lundi
+                </div>
+                <div class="bg-success border-left border-light text-light p-2">
+                    Mardi
+                </div>
+                <div class="bg-success border-left border-light text-light p-2">
+                    Mercredi
+                </div>
+                <div class="bg-success border-left border-light text-light p-2">
+                    Jeudi
+                </div>
+                <div class="bg-success border-left border-light text-light p-2">
+                    Vendredi
+                </div>
+                <div class="bg-success border-left border-light text-light p-2">
+                    Samedi
+                </div>
+
+                <!-- row 1 -->
+                <div class="bg-success text-light border-bottom border-light p-2">
+                    09h - 10h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+
+                <!-- row 2 -->
+                <div class="bg-success text-light border-bottom border-light p-2">
+                    10h - 11h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+
+                <!-- row 3 -->
+                <div class="bg-success text-light border-bottom border-light p-2">
+                    11h - 12h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+
+                <!-- row 4 -->
+                <div class="bg-success text-light border-bottom border-light p-2">
+                    12h - 13h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+
+                <!-- row 5 -->
+                <div class="bg-success text-light border-bottom border-light p-2">
+                    13h - 14h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+
+                <!-- row 6 -->
+                <div class="bg-success text-light border-bottom border-light p-2">
+                    14h - 15h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+
+                <!-- row 7 -->
+                <div class="bg-success text-light border-bottom border-light p-2">
+                    15h - 16h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+
+                <!-- row 8 -->
+                <div class="bg-success text-light border-bottom border-light p-2">
+                    16h - 17h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+
+                <!-- row 9 -->
+                <div class="bg-success text-light border-bottom border-success p-2">
+                    17h - 18h
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+                <div class="border-left border-bottom border-success text-success p-2">
+                    --
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="calendar_data">
+        {% for calendar in calendars %}
+            <div data-day="{{ calendar.calendar.day }}"
+                 data-hour="{{ calendar.calendar.hour }}"
+                 data-is_here="{{ calendar.calendar.isHere }}"></div>
+        {% endfor %}
+    </div>
+
+    <script>
+        let nodes = $('#nodes').children();
+        $('#calendar_data').children().each((index, elem) => {
+            let day = $(elem).data('day');
+            let hour = $(elem).data('hour');
+            let node = nodes.eq((hour + 1) * 7 + (day + 1));
+            if($(elem).data('is_here') === 1) {
+                node.html('');
+                node.append($('' +
+                    '<span class="text-success d-flex justify-content-between">' +
+                    '   &#10004; <span class="font-sm">disp.</span>' +
+                    '   <button type="submit" class="submit-rdv btn btn-sm btn-info px-1 py-0"' +
+                    '           data-day="' + day +'" data-hour="' + hour + '">Prendre pdv</button>' +
+                    '</span>'));
+            }
+            else {
+                node.html('');
+                node.append($('<span class="text-danger">&#10008; <span class="font-sm">non disp.</span></span>'));
+            }
+        });
+
+        $('.submit-rdv').click((e) => {
+            $('#day').val($(e.target).data('day'));
+            $('#hour').val($(e.target).data('hour'));
+        })
+    </script>
+
+
+{% endblock %}

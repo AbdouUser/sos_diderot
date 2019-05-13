@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="wrapper --bg-light">
+
+    <div class="mx-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-xl-6 col-xs-6 col-md-6 col-centered">
+                <center> {%include('flash-messages.html.twig')%} </center>
+            </div>
+          </div>
+
+
+            <section class="row">
+                <div class="col-lg-6 col-xl-6 col-xs-6 col-md-6 bg-light mx-auto my-3 p-4">
+                    <h5 class="text-dark text-center mb-4">
+                        Modifier l'adresse email
+                    </h5>
+                    <p class="mb-3">
+                        Lorsque vous changez l'adresse email, l'ancien sera écrasé
+                    </p>
+                    <form class="form mb-3"  action="/staff/email-updatee" method="post">
+                        <input name="email" type="email" class="form-control" required placeholder="Nouveau adresse email"/>
+                        <input type="submit" value="Enregistrer les modifications" class="btn btn-primary mt-3 mx-auto d-block"/>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

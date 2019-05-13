@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="cover-background-animation"></div>
+    <div class="intro-SOS">
+        <h2>
+            <center>Prenez rendez-vous en ligne chez un cadre de l'université de Paris</center>
+        </h2>
+        <h6>
+            <center>C'est immédiat, simple et gratuit.</center>
+        </h6>
+    </div>
+    {% include('search.html.twig') %}
+    <div class="row">
+        <div class="col-lg-8 col-xs-8 col-md-8 col-xl-8 mx-auto mt-5">
+            <center>
+                <font color="white"><h3>Vous êtes professionnel de l'université de Paris ? <br> Découvrez la prise de
+                        rendez-vous en ligne !</h3></font><br>
+                <a href="/staff/add"> <input type="submit" value="Commencer"
+                                             class="btn btn-primary mb-2 mx-auto d-block"></a>
+
+            </center>
+        </div>
+
+        <!--
+   <div class="col-lg-4 col-xl-4 col-xs-4 col-md-4 toure">
+      <img src="{{ asset('img/toure.png') }}"/>
+   </div>
+-->
+    </div>
+
+
+
+{% endblock %}
